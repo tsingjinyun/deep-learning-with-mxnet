@@ -22,11 +22,15 @@ if file_dir.startswith('../'):
 
 if not os.path.exists(file_dir):
     os.makedirs(file_dir);
-full_path = os.path.join('..',file_dir, file_name);
+
+## 源文件路径
+src_path = os.path.join('..',file_dir, file_name);
+
+## 目标路径
 target_path = os.path.join(file_dir, file_name_no_suffix+'.md');
 
 #执行生成命令
-cmd = 'jupyter nbconvert {0} --to markdown --output {1}'.format(full_path, target_path);
+cmd = 'jupyter nbconvert {0} --to markdown --output {1}'.format(src_path, target_path);
 print cmd;
 os.system(cmd);
 
@@ -41,7 +45,8 @@ with open(target_path, 'r') as f:
             if full < 0:
                 line = list(line);
                 loc = line.index('(') + 1;
-                line.insert(loc, 'https://raw.githubusercontent.com/dengdan/deep-learning-with-mxnet/master/markdowns/'+ os.path.join(file_dir, file_name_no_suffix + '_files/'));
+                url_prefix = 'https://raw.githubusercontent.com/dengdan/deep-learning-with-mxnet/master/markdowns/';
+                line.insert(loc, url_prefix);
                 line = ''.join(line);
                 lines[line_no] = line;
 
