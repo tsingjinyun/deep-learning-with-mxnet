@@ -122,11 +122,11 @@ plt.hist(train_labels, range(11));
 ```
 
 
-![png](https://raw.githubusercontent.com/dengdan/deep-learning-with-mxnet/master/io/mnist2rec_files/mnist2rec_8_0.png)
+![png](mnist2rec_files/mnist2rec_8_0.png)
 
 
 
-![png](https://raw.githubusercontent.com/dengdan/deep-learning-with-mxnet/master/io/mnist2rec_files/mnist2rec_8_1.png)
+![png](mnist2rec_files/mnist2rec_8_1.png)
 
 
 可以看出, 每个数字的分布还是挺均匀的.
