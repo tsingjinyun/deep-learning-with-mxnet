@@ -52,6 +52,7 @@ with open(target_path, 'r') as f:
                 print line;
                 lines[line_no] = line;
 endLine = '<hr>github: https://github.com/dengdan/deep-learning-with-mxnet/tree/master/'+ os.path.join(file_dir, file_name);
+print endLine;
 lines.append(endLine);
 with open(target_path, 'w') as f:
     f.writelines(lines);
