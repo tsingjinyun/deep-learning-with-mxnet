@@ -12,7 +12,7 @@ f = os.path.split(args.nb);
 # 路径处理
 file_dir = f[0];
 file_name = f[1];
-file_name_no_suffix = file_name;
+file_name_no_suffix = os.path.splitext(file_name)[0];
 
 if not file_name.endswith('.ipynb'):
     file_name = file_name + '.ipynb';
@@ -43,11 +43,13 @@ with open(target_path, 'r') as f:
         if m is not None:
             full = line.find('https://') + line.find('http://');
             if full < 0:
+                print line
                 line = list(line);
                 loc = line.index('(') + 1;
                 url_prefix = 'https://raw.githubusercontent.com/dengdan/deep-learning-with-mxnet/master/markdowns/';
                 line.insert(loc, url_prefix);
                 line = ''.join(line);
+                print line;
                 lines[line_no] = line;
 
 with open(target_path, 'w') as f:
