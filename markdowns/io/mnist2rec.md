@@ -257,4 +257,4 @@ with open(lst, 'w') as f:
     [16:28:36] tools/im2rec.cc:251: 60000 images processed, 4.40678 sec elapsed
     [16:28:36] tools/im2rec.cc:254: Total: 60000 images processed, 4.40682 sec elapsed
 
-<hr>github: https://github.com/dengdan/deep-learning-with-mxnet/tree/master/io
+<hr>github: https://github.com/dengdan/deep-learning-with-mxnet/tree/master/io/mnist2rec.ipynb
